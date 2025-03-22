@@ -6,7 +6,7 @@
     <title>Furkan Yılmaz</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; text-align: center; background: url('https://source.unsplash.com/1600x900/?technology,circuit') no-repeat center center/cover; color: #333; }
+        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; color: #333; transition: background 0.5s ease-in-out; }
         header { background: rgba(0, 123, 255, 0.8); color: white; padding: 20px; font-size: 28px; font-weight: bold; }
         nav { display: flex; justify-content: center; background: rgba(255, 255, 255, 0.9); padding: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
         nav a { margin: 0 20px; text-decoration: none; color: #007bff; font-size: 20px; font-weight: bold; transition: 0.3s; }
@@ -20,39 +20,39 @@
 <body>
     <header>Furkan Yılmaz</header>
     <nav>
-        <a href="#" onclick="showSection('hakkimda')">Hakkımda</a>
-        <a href="#" onclick="showSection('basarilar')">Başarılarım</a>
-        <a href="#" onclick="showSection('egitim')">Eğitim Hayatım</a>
-        <a href="#" onclick="showSection('ilgi')">İlgi Alanlarım</a>
+        <a href="#" onclick="showSection('hakkimda', 'https://source.unsplash.com/1600x900/?university,students')">Hakkımda</a>
+        <a href="#" onclick="showSection('basarilar', 'https://source.unsplash.com/1600x900/?medal,trophy')">Başarılarım</a>
+        <a href="#" onclick="showSection('egitim', 'https://source.unsplash.com/1600x900/?school,graduation')">Eğitim Hayatım</a>
+        <a href="#" onclick="showSection('ilgi', 'https://source.unsplash.com/1600x900/?football,sports')">İlgi Alanlarım</a>
     </nav>
     
-    <section id="hakkimda" class="active" style="background: url('https://source.unsplash.com/800x600/?university,students') no-repeat center center/cover;">
+    <section id="hakkimda" class="active">
         <h2>Hakkımda</h2>
         <p>Hacettepe Elektrik Elektronik Mühendisliği 1. Sınıf öğrencisiyim.</p>
     </section>
     
-    <section id="basarilar" style="background: url('https://source.unsplash.com/800x600/?medal,trophy') no-repeat center center/cover;">
+    <section id="basarilar">
         <h2>Başarılarım</h2>
         <p>Basketbol ve futbolda madalyalar.</p>
     </section>
     
-    <section id="egitim" style="background: url('https://source.unsplash.com/800x600/?school,graduation') no-repeat center center/cover;">
+    <section id="egitim">
         <h2>Eğitim Hayatım</h2>
         <p>Aydın Fen Lisesi mezunuyum.</p>
     </section>
     
-    <section id="ilgi" style="background: url('https://source.unsplash.com/800x600/?football,sports') no-repeat center center/cover;">
+    <section id="ilgi">
         <h2>İlgi Alanlarım</h2>
         <p>Futbol.</p>
     </section>
     
     <script>
-        function showSection(id) {
+        function showSection(id, bgImage) {
             document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
             document.getElementById(id).classList.add('active');
+            document.body.style.background = `url('${bgImage}') no-repeat center center/cover`;
         }
     </script>
 </body>
 </html>
-
 
