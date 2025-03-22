@@ -4,53 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furkan Yılmaz</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; color: #333; transition: background 0.5s ease-in-out; }
-        header { background: rgba(0, 123, 255, 0.8); color: white; padding: 20px; font-size: 28px; font-weight: bold; }
-        nav { display: flex; justify-content: center; background: rgba(255, 255, 255, 0.9); padding: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
-        nav a { margin: 0 20px; text-decoration: none; color: #007bff; font-size: 20px; font-weight: bold; transition: 0.3s; }
-        nav a:hover { color: #0056b3; }
-        section { display: none; padding: 40px; max-width: 800px; margin: 20px auto; background: rgba(255, 255, 255, 0.9); box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; }
-        .active { display: block; }
-        h2 { color: #007bff; margin-bottom: 10px; }
-        p { font-size: 18px; line-height: 1.6; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>Furkan Yılmaz</header>
     <nav>
-        <a href="#" onclick="showSection('hakkimda', 'https://source.unsplash.com/1600x900/?university,students')">Hakkımda</a>
-        <a href="#" onclick="showSection('basarilar', 'https://source.unsplash.com/1600x900/?medal,trophy')">Başarılarım</a>
-        <a href="#" onclick="showSection('egitim', 'https://source.unsplash.com/1600x900/?school,graduation')">Eğitim Hayatım</a>
-        <a href="#" onclick="showSection('ilgi', 'https://source.unsplash.com/1600x900/?football,sports')">İlgi Alanlarım</a>
+        <a href="#" onclick="showSection('hakkimda')">Hakkımda</a>
+        <a href="#" onclick="showSection('homework')">Homework</a>
+        <a href="#" onclick="showSection('iletisim')">İletişim</a>
     </nav>
     
     <section id="hakkimda" class="active">
         <h2>Hakkımda</h2>
-        <p>Hacettepe Elektrik Elektronik Mühendisliği 1. Sınıf öğrencisiyim.</p>
+        <p>Ben Furkan, Hacettepe Elektrik Elektronik Mühendisliği 1. Sınıf öğrencisiyim.</p>
     </section>
     
-    <section id="basarilar">
-        <h2>Başarılarım</h2>
-        <p>Basketbol ve futbolda madalyalar.</p>
+    <section id="homework">
+        <h2>Homework</h2>
+        <button onclick="window.open('https://github.com/Furkanylmz05/Homework/blob/main/HW1-Q2.c')">HW1-Q2.c</button>
+        <button onclick="window.open('https://github.com/Furkanylmz05/Homework/blob/main/HW1-Q3.c')">HW1-Q3.c</button>
+        <button onclick="window.open('https://github.com/Furkanylmz05/Homework/blob/main/HW1-Q4-a.c')">HW1-Q4-a.c</button>
+        <button onclick="window.open('https://github.com/Furkanylmz05/Homework/blob/main/HW1-Q4-b.c')">HW1-Q4-b.c</button>
     </section>
     
-    <section id="egitim">
-        <h2>Eğitim Hayatım</h2>
-        <p>Aydın Fen Lisesi mezunuyum.</p>
-    </section>
-    
-    <section id="ilgi">
-        <h2>İlgi Alanlarım</h2>
-        <p>Futbol.</p>
+    <section id="iletisim">
+        <h2>İletişim</h2>
+        <p>furkan@example.com</p>
     </section>
     
     <script>
-        function showSection(id, bgImage) {
+        function showSection(id) {
             document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            document.body.style.background = `url('${bgImage}') no-repeat center center/cover`;
         }
     </script>
 </body>
